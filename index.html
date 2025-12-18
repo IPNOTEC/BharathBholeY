@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BHARATH BHOLEY | Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Color Palette from Image */
+            --color-cyan: #8F0FF0; /* Actually purple from your text, using as accent */
+            --color-blue1: #0070B0;
+            --color-blue2: #00B0F0;
+            --color-green: #45DE10;
+            --color-yellow: #FFF000;
+            --color-orange: #FF6900;
+            --color-red: #FF000F;
+            --color-grey: #707070;
+            
+            /* Background and Text */
+            --bg-primary: #000000;
+            --bg-secondary: #0a0a0a;
+            --text-white: #ffffff;
+            --text-grey: #aaaaaa;
+            --text-light: #cccccc;
+            
+            /* Card Colors */
+            --card-1: #0070B0; /* Blue 1 */
+            --card-2: #00B0F0; /* Blue 2 */
+            --card-3: #45DE10; /* Green */
+            --card-4: #FFF000; /* Yellow */
+            --card-5: #FF6900; /* Orange */
+            --card-6: #FF000F; /* Red */
+            --card-7: #707070; /* Grey */
+            --card-8: #8F0FF0; /* Purple */
+            
+            /* Layout */
+            --bezel-radius: 12px;
+            --card-radius: 8px;
+            --button-radius: 6px;
+        }
+
+        * {
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 15px 10px;
+            background-color: var(--bg-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Source Code Pro', 'IBM Plex Mono', monospace;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        /* Terminal Device */
+        .terminal-device {
+            width: 100%;
+            max-width: 400px;
+            min-height: 700px;
+            background: var(--bg-primary);
+            border-radius: var(--bezel-radius);
+            position: relative;
+            border: 1px solid var(--color-grey);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            margin: 0 auto;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Top Bezel */
+        .top-bezel {
+            height: 60px;
+            background: var(--bg-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
+            border-bottom: 1px solid var(--color-grey);
+            flex-shrink: 0;
+        }
+
+        .led-container {
+            display: flex;
+            gap: 8px;
+        }
+
+        .led-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .led-dot:nth-child(1) {
+            background-color: var(--color-orange);
+            animation: ledBlink 3s infinite;
+        }
+
+        .led-dot:nth-child(2) {
+            background-color: var(--text-white);
+            animation: ledBlink 3s infinite 0.5s;
+        }
+
+        .led-dot:nth-child(3) {
+            background-color: var(--color-orange);
+            animation: ledBlink 3s infinite 1s;
+        }
+
+        @keyframes ledBlink {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .resume-label {
+            color: var(--text-grey);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* Screen */
+        .terminal-screen {
+            flex-grow: 1;
+            background: var(--bg-primary);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Status Bar */
+        .status-bar {
+            height: 30px;
+            background: var(--bg-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+            font-size: 11px;
+            color: var(--text-grey);
+            flex-shrink: 0;
+            border-bottom: 1px solid var(--color-grey);
+        }
+
+        .status-time {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .status-online {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--color-green);
+        }
+
+        /* Main Content */
+        .terminal-content {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 20px 15px;
+            padding-bottom: 150px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .terminal-content::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        .terminal-content::-webkit-scrollbar-thumb {
+            background: var(--color-grey);
+            border-radius: 1.5px;
+        }
+
+        /* Header */
+        .terminal-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--color-grey);
+        }
+
+        .name-terminal {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .name-terminal .white-b {
+            color: var(--text-white);
+        }
+
+        .name-terminal .grey-text {
+            color: var(--text-grey);
+        }
+
+        .profile-bb {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-top: 10px;
+            letter-spacing: 2px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin-top: 15px;
+            font-size: 11px;
+            color: var(--text-grey);
+        }
+
+        .contact-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Accordion Cards */
+        .terminal-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .terminal-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--color-grey);
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .terminal-card:hover {
+            border-color: currentColor;
+            transform: translateY(-2px);
+        }
+
+        .terminal-card.active {
+            border-color: currentColor;
+            box-shadow: 0 0 0 1px currentColor, 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Card Colors */
+        .terminal-card[data-color="1"] { color: var(--card-1); }
+        .terminal-card[data-color="2"] { color: var(--card-2); }
+        .terminal-card[data-color="3"] { color: var(--card-3); }
+        .terminal-card[data-color="4"] { color: var(--card-4); }
+        .terminal-card[data-color="5"] { color: var(--card-5); }
+        .terminal-card[data-color="6"] { color: var(--card-6); }
+        .terminal-card[data-color="7"] { color: var(--card-7); }
+        .terminal-card[data-color="8"] { color: var(--card-8); }
+
+        .card-header {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .card-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            font-size: 14px;
+        }
+
+        .card-text h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 3px;
+        }
+
+        .card-text p {
+            font-size: 11px;
+            color: var(--text-grey);
+        }
+
+        .card-toggle {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-grey);
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .terminal-card.active .card-toggle {
+            transform: rotate(45deg);
+            background: currentColor;
+            color: var(--bg-primary);
+        }
+
+        .card-content {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            color: var(--text-light);
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .terminal-card.active .card-content {
+            padding: 0 15px 20px 15px;
+            max-height: 1000px;
+        }
+
+        /* Content Styling */
+        .content-section {
+            margin: 15px 0;
+        }
+
+        .section-title {
+            color: var(--text-white);
+            font-size: 15px;
+            font-weight: 600;
+            margin: 15px 0 10px 0;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 5px;
+        }
+
+        .subsection-title {
+            color: currentColor;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 12px 0 6px 0;
+        }
+
+        p {
+            margin: 8px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .company-block {
+            margin: 15px 0;
+            padding-left: 12px;
+            border-left: 2px solid var(--color-grey);
+        }
+
+        .company-name {
+            color: var(--text-white);
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .company-role {
+            color: currentColor;
+            font-size: 12px;
+            font-weight: 500;
+            margin: 3px 0;
+        }
+
+        .company-duration {
+            color: var(--text-grey);
+            font-size: 11px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 10px 0;
+        }
+
+        .skill-tag {
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            font-size: 11px;
+            color: var(--text-grey);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .interest-pair {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            font-size: 12px;
+            color: var(--text-grey);
+            margin: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Startup Cards */
+        .startup-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 15px;
+            margin: 12px 0;
+        }
+
+        .startup-title {
+            color: var(--text-white);
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .startup-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            font-size: 10px;
+            color: currentColor;
+            margin-left: 8px;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .startup-description {
+            color: currentColor;
+            font-size: 12px;
+            font-style: italic;
+            margin: 8px 0;
+        }
+
+        .startup-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            font-size: 11px;
+            color: currentColor;
+            text-decoration: none;
+            margin-top: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Linktree Box */
+        .linktree-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 18px;
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .linktree-title {
+            color: var(--text-white);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .linktree-url {
+            color: var(--color-blue2);
+            font-size: 12px;
+            word-break: break-all;
+            margin: 10px 0;
+            padding: 8px 10px;
+            background: rgba(0, 176, 240, 0.05);
+            border-radius: 4px;
+            border: 1px solid rgba(0, 176, 240, 0.2);
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .linktree-url a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .linktree-desc {
+            color: var(--text-grey);
+            font-size: 11px;
+            margin-top: 8px;
+        }
+
+        /* Mode Toggle */
+        .mode-toggle-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0 25px 0;
+        }
+
+        .mode-toggle {
+            width: 100%;
+            max-width: 300px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--color-grey);
+            border-radius: 8px;
+            padding: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mode-toggle:hover {
+            border-color: var(--color-blue2);
+        }
+
+        .toggle-trackpad {
+            width: 100px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            position: relative;
+            border: 1px solid var(--color-grey);
+            overflow: hidden;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 26px;
+            height: 26px;
+            background: var(--color-blue1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-white);
+            font-size: 12px;
+        }
+
+        .entrepreneur-mode .toggle-slider {
+            left: calc(100% - 28px);
+            background: var(--card-8);
+        }
+
+        .toggle-labels {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 5px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .toggle-label {
+            padding: 4px 10px;
+            border-radius: 4px;
+            color: var(--text-grey);
+        }
+
+        .toggle-label.pro {
+            color: var(--color-blue1);
+        }
+
+        .toggle-label.ent {
+            color: var(--card-8);
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            height: 85px;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--color-grey);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 0 15px;
+            flex-shrink: 0;
+            z-index: 10;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .action-btn {
+            flex: 1;
+            height: 55px;
+            background: var(--bg-primary);
+            border: 1px solid var(--color-grey);
+            border-radius: var(--button-radius);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-grey);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        .action-btn:hover {
+            border-color: currentColor;
+            color: var(--text-white);
+        }
+
+        .action-btn.email:hover { border-color: var(--color-blue2); color: var(--color-blue2); }
+        .action-btn.profile:hover { border-color: var(--text-white); color: var(--text-white); }
+        .action-btn.whatsapp:hover { border-color: var(--color-green); color: var(--color-green); }
+
+        .action-btn i {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        /* Responsive */
+        @media (max-height: 700px) {
+            .terminal-device {
+                min-height: 600px;
+            }
+            
+            .terminal-content {
+                padding-bottom: 140px;
+            }
+            
+            .action-buttons {
+                height: 75px;
+            }
+            
+            .action-btn {
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .terminal-device {
+                border-radius: 8px;
+            }
+            
+            .top-bezel {
+                height: 50px;
+                padding: 0 15px;
+            }
+            
+            .card-header {
+                padding: 12px;
+            }
+            
+            .action-buttons {
+                padding: 0 10px;
+                gap: 8px;
+            }
+            
+            .action-btn {
+                height: 50px;
+                font-size: 9px;
+            }
+            
+            .action-btn i {
+                font-size: 16px;
+                margin-bottom: 4px;
+            }
+            
+            .name-terminal {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="terminal-device" id="terminal-device">
+        
+        <div class="top-bezel">
+            <div class="led-container">
+                <div class="led-dot"></div>
+                <div class="led-dot"></div>
+                <div class="led-dot"></div>
+            </div>
+            <div class="resume-label">RESUME</div>
+        </div>
+
+        <div class="terminal-screen" id="terminal-screen">
+            
+            <div class="status-bar">
+                <div class="status-time" id="clock">12:00 PM</div>
+                <div class="status-online">
+                    <div class="online-dot" style="width: 6px; height: 6px; background: var(--color-green); border-radius: 50%;"></div>
+                    <span>ONLINE</span>
+                </div>
+            </div>
+
+            <div class="terminal-content">
+                <div class="terminal-header">
+                    <div class="name-terminal">
+                        <span class="white-b">B</span><span class="grey-text">HARATH </span>
+                        <span class="white-b">B</span><span class="grey-text">HOLEY</span>
+                    </div>
+                    <div class="profile-bb">BB</div>
+                    <div class="contact-info">
+                        <div class="contact-line">
+                            <i class="fas fa-envelope"></i>
+                            <span>BharathBholeY@gmail.com</span>
+                        </div>
+                        <div class="contact-line">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>BENGALURU, INDIA</span>
+                        </div>
+                        <div class="contact-line">
+                            <i class="fas fa-phone"></i>
+                            <span>+91-6292306090</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-accordion" id="terminal-accordion">
+                    <!-- Content will be dynamically loaded here -->
+                </div>
+
+                <div class="mode-toggle-container">
+                    <div class="mode-toggle" id="mode-toggle">
+                        <div class="toggle-trackpad">
+                            <div class="toggle-slider">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="toggle-labels">
+                            <div class="toggle-label pro">PROFESSIONAL</div>
+                            <div class="toggle-label ent">ENTREPRENEUR</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="linktree-box" id="linktree-box">
+                    <div class="linktree-title">DIGITAL PORTFOLIO</div>
+                    <div class="linktree-url">
+                        <a href="https://linktr.ee/BharathBholeY" target="_blank">
+                            https://linktr.ee/BharathBholeY
+                        </a>
+                    </div>
+                    <div class="linktree-desc">
+                        All projects and profiles in one place
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="action-buttons">
+            <a class="action-btn email" href="mailto:BharathBholeY@gmail.com">
+                <i class="fas fa-envelope"></i>
+                <span>EMAIL</span>
+            </a>
+            
+            <a class="action-btn profile" href="https://linktr.ee/BharathBholeY" target="_blank">
+                <i class="fas fa-user"></i>
+                <span>PROFILE</span>
+            </a>
+            
+            <a class="action-btn whatsapp" href="https://wa.me/916292306090?text=Hi%20Bharath%2C%20I%20saw%20your%20resume%20and%20would%20like%20to%20connect" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>WHATSAPP</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Data Stores
+        const professionalData = [
+            {
+                id: "p1",
+                icon: "fas fa-user",
+                title: "PROFILE SUMMARY",
+                subtitle: "20+ Years Corporate Experience",
+                color: "1",
+                content: `
+                    <div class="content-section">
+                        <div class="section-title">PROFILE</div>
+                        <p>IT Consultant & Service Management Professional with 20+ years of experience in cost optimization, data-driven decision-making, and enhancing user experience through efficient SLA execution and process improvements.</p>
+                        
+                        <div class="subsection-title">EXPERIENCE BREAKDOWN</div>
+                        <ul>
+                            <li><strong>End User Experience:</strong> 1 Year</li>
+                            <li><strong>Project Management:</strong> 2 Years</li>
+                            <li><strong>Service Management:</strong> 7 Years</li>
+                            <li><strong>SME/Employee Service Desk:</strong> 5 Years</li>
+                            <li><strong>End User Support/Team Lead:</strong> 5+ Years</li>
+                        </ul>
+                        
+                        <div class="subsection-title">CORE COMPETENCIES</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">IT Service Management</span>
+                            <span class="skill-tag">Project Leadership</span>
+                            <span class="skill-tag">Cost Optimization</span>
+                            <span class="skill-tag">Cloud Migration</span>
+                            <span class="skill-tag">Stakeholder Management</span>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "p2",
+                icon: "fas fa-building",
+                title: "COMPANIES & EXPERIENCE",
+                subtitle: "20 Years Across Leading Organizations",
+                color: "2",
+                content: `
+                    <div class="content-section">
+                        <div class="section-title">PROFESSIONAL JOURNEY</div>
+                        
+                        <div class="company-block">
+                            <div class="company-name">ERICSSON INDIA GLOBAL PVT LTD</div>
+                            <div class="company-role">IT Consultant</div>
+                            <div class="company-duration">Jan 2012 - Dec 2024 (12+ Years)</div>
+                            <p>Led enterprise IT initiatives, cloud migrations, and service management across 70+ countries.</p>
+                        </div>
+                        
+                        <div class="company-block">
+                            <div class="company-name">COGNIZANT TECHNOLOGY SOLUTIONS</div>
+                            <div class="company-role">Technical Lead</div>
+                            <div class="company-duration">Aug 2010 - Jan 2012 (1.5 Years)</div>
+                            <p>Service operations, team leadership, and client coordination.</p>
+                        </div>
+                        
+                        <div class="company-block">
+                            <div class="company-name">GOLDMAN SACHS</div>
+                            <div class="company-role">SME Relationship Manager</div>
+                            <div class="company-duration">2008 - 2010 (2 Years)</div>
+                        </div>
+                        
+                        <div class="company-block">
+                            <div class="company-name">HP (EDS/MPHASIS)</div>
+                            <div class="company-role">SME Team Leader</div>
+                            <div class="company-duration">2005 - 2008 (3 Years)</div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "p3",
+                icon: "fas fa-graduation-cap",
+                title: "EDUCATION & SKILLS",
+                subtitle: "BE in Information Science & Technical Expertise",
+                color: "3",
+                content: `
+                    <div class="content-section">
+                        <div class="section-title">EDUCATION</div>
+                        
+                        <div class="company-block">
+                            <div class="company-name">BACHELOR OF ENGINEERING - INFORMATION SCIENCE</div>
+                            <div class="company-role">University Visvesvaraya College of Engineering, Bengaluru</div>
+                            <div class="company-duration">2001 - 2005</div>
+                        </div>
+                        
+                        <div class="subsection-title">TECHNICAL SKILLS</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Citrix Virtualization</span>
+                            <span class="skill-tag">Microsoft Azure</span>
+                            <span class="skill-tag">VMware</span>
+                            <span class="skill-tag">Tableau</span>
+                            <span class="skill-tag">ITIL Framework</span>
+                            <span class="skill-tag">Windows OS</span>
+                            <span class="skill-tag">SAP</span>
+                            <span class="skill-tag">Active Directory</span>
+                        </div>
+                        
+                        <div class="subsection-title">MANAGEMENT SKILLS</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">IT Asset Management</span>
+                            <span class="skill-tag">Project Management</span>
+                            <span class="skill-tag">Vendor Management</span>
+                            <span class="skill-tag">Change Management</span>
+                            <span class="skill-tag">Business Analysis</span>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "p4",
+                icon: "fas fa-users",
+                title: "PERSONAL DETAILS",
+                subtitle: "Languages & Interests",
+                color: "4",
+                content: `
+                    <div class="content-section">
+                        <div class="section-title">LANGUAGES</div>
+                        <ul>
+                            <li><strong>English:</strong> Advanced (Professional proficiency)</li>
+                            <li><strong>Kannada:</strong> Upper intermediate</li>
+                            <li><strong>Telugu:</strong> Intermediate</li>
+                            <li><strong>Hindi:</strong> Upper intermediate</li>
+                            <li><strong>Tamil:</strong> Elementary</li>
+                        </ul>
+                        
+                        <div class="subsection-title">INTERESTS</div>
+                        <div style="margin: 10px 0;">
+                            <span class="interest-pair">Mythology / Technology</span>
+                            <span class="interest-pair">Road Trips / Community Building</span>
+                            <span class="interest-pair">Business Ideas / Networking</span>
+                        </div>
+                        
+                        <div class="subsection-title">PERSONAL</div>
+                        <ul>
+                            <li><strong>Date of Birth:</strong> 16-09-1983</li>
+                            <li><strong>Place of Birth:</strong> Madanapalle, Andhra Pradesh</li>
+                            <li><strong>Current Location:</strong> Bengaluru, India</li>
+                            <li><strong>Status:</strong> Available for consulting opportunities</li>
+                        </ul>
+                    </div>
+                `
+            }
+        ];
+
+        const entrepreneurData = [
+            {
+                id: "e1",
+                icon: "fas fa-rocket",
+                title: "ENTREPRENEUR PROFILE",
+                subtitle: "MBA in Entrepreneurship & Innovation",
+                color: "8",
+                content: `
+                    <div class="content-section">
+                        <div class="section-title">EDUCATION</div>
+                        
+                        <div class="company-block">
+                            <div class="company-name">MBA - ENTREPRENEURSHIP & INNOVATION</div>
+                            <div class="company-role">Manipal Academy of Higher Education (MAHE)</div>
+                            <div class="company-duration">SEP 2024 - NOV 2025 (Expected)</div>
+                            <p style="margin-top: 10px;">Specializing in creating innovative solutions and building sustainable business models.</p>
+                        </div>
+                        
+                        <div class="subsection-title">ENTREPRENEURIAL VISION</div>
+                        <p>Driven by a passion for innovation and community building, focusing on creating ecosystems that redefine how people work, connect, and interact with technology.</p>
+                        
+                        <div class="subsection-title">CORE DOMAINS</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Startup Advisory</span>
+                            <span class="skill-tag">Innovation Consulting</span>
+                            <span class="skill-tag">Business Strategy</span>
+                            <span class="skill-tag">Community Building</span>
+                            <span class="skill-tag">Digital Transformation</span>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "e2",
+                icon: "fas fa-lightbulb",
+                title: "IPNOTEC",
+                subtitle: "Step Into The Future",
+                color: "5",
+                content: `
+                    <div class="content-section">
+                        <div class="startup-card">
+                            <div class="startup-title">
+                                IPNOTEC <span class="startup-badge">1.08C @ 1%</span>
+                            </div>
+                            <div class="startup-description">
+                                Phoneless, Keyless and Paperless Ecosystem
+                            </div>
+                            <p>Revolutionizing how we interact with technology by creating seamless, integrated systems that eliminate traditional barriers and dependencies.</p>
+                            
+                            <div class="subsection-title">CORE CONCEPT</div>
+                            <ul>
+                                <li>Creating integrated ecosystems that reduce device dependency</li>
+                                <li>Biometric and AI-driven authentication systems</li>
+                                <li>Paperless workflows for sustainable operations</li>
+                                <li>IoT integration for smart environments</li>
+                            </ul>
+                            
+                            <div class="subsection-title">VISION</div>
+                            <p>To create a world where technology serves humans intuitively, without the burden of multiple devices, keys, or paperwork.</p>
+                            
+                            <a href="https://ipnotec-1min-pitch.vercel.app" target="_blank" class="startup-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Pitch Deck
+                            </a>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "e3",
+                icon: "fas fa-handshake",
+                title: "CLUBICLES",
+                subtitle: "Connect - Collaborate - Create",
+                color: "6",
+                content: `
+                    <div class="content-section">
+                        <div class="startup-card">
+                            <div class="startup-title">
+                                CLUBICLES <span class="startup-badge">1.08C @ 6%</span>
+                            </div>
+                            <div class="startup-description">
+                                Co-Working Community Redefined
+                            </div>
+                            <p>Transforming traditional co-working spaces into vibrant communities where professionals connect, collaborate on projects, and create meaningful relationships.</p>
+                            
+                            <div class="subsection-title">COMMUNITY FOCUS</div>
+                            <ul>
+                                <li>Curated networking and collaboration opportunities</li>
+                                <li>Project-based community building</li>
+                                <li>Skill-sharing and knowledge exchange platforms</li>
+                                <li>Events and workshops for professional growth</li>
+                            </ul>
+                            
+                            <div class="subsection-title">MISSION</div>
+                            <p>To build ecosystems where professionals share ideas, resources, and opportunities - fostering innovation through meaningful connections.</p>
+                            
+                            <a href="https://1-m-clubicles.vercel.app" target="_blank" class="startup-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Concept
+                            </a>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "e4",
+                icon: "fas fa-globe-asia",
+                title: "BHARAT CULTURE",
+                subtitle: "Sanskrit & Sanathana Dharma",
+                color: "7",
+                content: `
+                    <div class="content-section">
+                        <div class="startup-card">
+                            <div class="startup-title">
+                                BHARAT CULTURE <span class="startup-badge">Community Project</span>
+                            </div>
+                            <div class="startup-description">
+                                Creating Organized and community built digital hub for SANSKRIT and Sanathana Dharma of Bharat
+                            </div>
+                            <p>A digital initiative focused on preserving and promoting the rich cultural heritage, Sanskrit language, and Sanathana Dharma traditions of Bharat through community collaboration and modern technology.</p>
+                            
+                            <div class="subsection-title">CORE FOCUS</div>
+                            <ul>
+                                <li>Digital preservation of Sanskrit texts and literature</li>
+                                <li>Community-driven learning platforms for Sanathana Dharma</li>
+                                <li>Cultural exchange and knowledge sharing</li>
+                                <li>Integration of traditional wisdom with modern technology</li>
+                                <li>Building global community around Bharat's cultural heritage</li>
+                            </ul>
+                            
+                            <div class="subsection-title">VISION</div>
+                            <p>To create a comprehensive digital ecosystem that makes the timeless wisdom of Bharat's culture accessible to global audiences while preserving its authenticity and depth.</p>
+                            
+                            <a href="https://www.rwawe.com" target="_blank" class="startup-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Explore Project
+                            </a>
+                        </div>
+                    </div>
+                `
+            }
+        ];
+
+        // DOM Elements
+        const terminalAccordion = document.getElementById('terminal-accordion');
+        const modeToggle = document.getElementById('mode-toggle');
+        const terminalDevice = document.getElementById('terminal-device');
+        const terminalScreen = document.getElementById('terminal-screen');
+
+        // State
+        let isEntrepreneurMode = false;
+        let activeAccordion = null;
+
+        // Functions
+        function renderAccordion(data) {
+            terminalAccordion.innerHTML = '';
+            
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = `terminal-card`;
+                card.dataset.id = item.id;
+                card.dataset.color = item.color;
+                card.style.color = getComputedStyle(document.documentElement).getPropertyValue(`--card-${item.color}`);
+                
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="card-icon">
+                                <i class="${item.icon}"></i>
+                            </div>
+                            <div class="card-text">
+                                <h3>${item.title}</h3>
+                                <p>${item.subtitle}</p>
+                            </div>
+                        </div>
+                        <div class="card-toggle">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        ${item.content}
+                    </div>
+                `;
+                
+                const header = card.querySelector('.card-header');
+                const toggleIcon = card.querySelector('.card-toggle i');
+                
+                header.addEventListener('click', () => {
+                    if (activeAccordion && activeAccordion !== card) {
+                        activeAccordion.classList.remove('active');
+                        activeAccordion.querySelector('.card-toggle i').className = 'fas fa-plus';
+                    }
+                    
+                    const isOpening = !card.classList.contains('active');
+                    card.classList.toggle('active');
+                    toggleIcon.className = isOpening ? 'fas fa-times' : 'fas fa-plus';
+                    
+                    activeAccordion = card.classList.contains('active') ? card : null;
+                    
+                    // Set device frame border color to match card color
+                    if (isOpening) {
+                        const color = getComputedStyle(card).color;
+                        terminalDevice.style.borderColor = color;
+                    } else {
+                        terminalDevice.style.borderColor = 'var(--color-grey)';
+                    }
+                });
+                
+                terminalAccordion.appendChild(card);
+            });
+        }
+
+        function toggleMode() {
+            isEntrepreneurMode = !isEntrepreneurMode;
+            
+            // Update UI
+            if (isEntrepreneurMode) {
+                terminalDevice.classList.add('entrepreneur-mode');
+                terminalScreen.classList.add('entrepreneur-mode');
+                renderAccordion(entrepreneurData);
+            } else {
+                terminalDevice.classList.remove('entrepreneur-mode');
+                terminalScreen.classList.remove('entrepreneur-mode');
+                renderAccordion(professionalData);
+            }
+            
+            // Reset frame color
+            terminalDevice.style.borderColor = 'var(--color-grey)';
+            
+            // Close any open accordion
+            if (activeAccordion) {
+                activeAccordion.classList.remove('active');
+                activeAccordion.querySelector('.card-toggle i').className = 'fas fa-plus';
+                activeAccordion = null;
+            }
+        }
+
+        // Initialize
+        renderAccordion(professionalData);
+        
+        // Event Listeners
+        modeToggle.addEventListener('click', toggleMode);
+        
+        // Close accordion when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.terminal-card') && activeAccordion) {
+                activeAccordion.classList.remove('active');
+                activeAccordion.querySelector('.card-toggle i').className = 'fas fa-plus';
+                activeAccordion = null;
+                terminalDevice.style.borderColor = 'var(--color-grey)';
+            }
+        });
+
+        // Real-time Clock
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let mins = now.getMinutes();
+            let ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            mins = mins < 10 ? '0'+mins : mins;
+            document.getElementById('clock').innerText = `${hours}:${mins} ${ampm}`;
+        }
+        
+        setInterval(updateClock, 60000); // Update every minute
+        updateClock();
+
+        // LED dot animation reset
+        const ledDots = document.querySelectorAll('.led-dot');
+        setInterval(() => {
+            ledDots.forEach(dot => {
+                dot.style.animation = 'none';
+                setTimeout(() => {
+                    dot.style.animation = 'ledBlink 3s infinite';
+                }, 10);
+            });
+        }, 9000); // Reset every 9 seconds
+    </script>
+</body>
+</html>
